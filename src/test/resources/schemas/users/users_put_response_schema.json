@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome1",
+  "definitions": {
+    "Welcome1": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/Welcome1Data"
+        }
+      },
+      "required": [
+        "data"
+      ],
+      "title": "Welcome1"
+    },
+    "Welcome1Data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "collection_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "project_id": {
+          "type": "integer"
+        },
+        "app_user_id": {
+          "type": "null"
+        },
+        "created_by": {
+          "type": "integer"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "deleted_at": {
+          "type": "null"
+        },
+        "data": {
+          "$ref": "#/definitions/DataData"
+        }
+      },
+      "required": [
+        "app_user_id",
+        "collection_id",
+        "created_at",
+        "created_by",
+        "data",
+        "deleted_at",
+        "id",
+        "project_id",
+        "updated_at"
+      ],
+      "title": "Welcome1Data"
+    },
+    "DataData": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "name",
+        "role"
+      ],
+      "title": "DataData"
+    }
+  }
+}
