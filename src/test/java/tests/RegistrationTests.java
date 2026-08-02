@@ -27,19 +27,19 @@ public class RegistrationTests extends TestBase {
         SuccessfulRegistrationResponseRecordsModel registrationResponse
                 = api.register.mainRequest(request);
 
-        step("Проверка соответствия name)", () -> {
+        step("Проверка соответствия name", () -> {
             assertThat(registrationResponse.data().data().name())
                     .as("Проверка на соответствие name")
                     .isEqualTo(expectedName);
         });
 
-        step("Проверка соответствия email)", () -> {
+        step("Проверка соответствия email", () -> {
             assertThat(registrationResponse.data().data().email())
                     .as("Проверка на соответствие email")
                     .isEqualTo(expectedEmail);
         });
 
-        step("Проверка соответствия role)", () -> {
+        step("Проверка соответствия role", () -> {
             assertThat(registrationResponse.data().data().role())
                     .as("Проверка на соответствие role")
                     .isEqualTo(getRandomRole);
@@ -72,6 +72,25 @@ public class RegistrationTests extends TestBase {
             assertThat(actualError)
                     .as("Проверка текста ошибки при невалидном Json в запросе")
                     .isEqualTo(TestData.EXPECTED_ERROR_INVALID_JSON);
+        });
+    }
+
+    @DisplayName("Негативный тест - создание пользователя: 401 статус-код")
+    @Test
+    public void unauthorizedRegistrationTest() {
+
+        UserData userData = new UserData(TestData.getRandomName(), TestData.getRandomEmail(), TestData.getRandomRole());
+        RegistrationBodyModel unauthorizedrequest = new RegistrationBodyModel(userData);
+
+        InvalidRegistrationResponseRecordsModel unauthorizedResponse
+                = api.register.unauthorizedRequest(unauthorizedrequest);
+
+        step("Верификация сообщения об ошибке валидации бэкенда (401)", () -> {
+            String actualError = unauthorizedResponse.error();
+
+            assertThat(actualError)
+                    .as("Проверка текста ошибки при добавлении пользователя без авторизации")
+                    .isEqualTo(TestData.AUTH_CREDENTIALS_NOT_PROVIDED_ERROR);
         });
     }
 }

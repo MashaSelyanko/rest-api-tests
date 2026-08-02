@@ -11,7 +11,7 @@ import static specs.users.users_patch.UserSpecPatch.successfulPatchUsersResponse
 
 public class UserPatchApiClient extends TestBase {
 
-    @Step("Частичное зменение пользователя")
+    @Step("Частичное изменение пользователя")
     public PatchUsersResponseModel mainRequestPatchUser(UserData body, String id) {
         return given(userRequestSpec)
                 .config(timeoutConfig)

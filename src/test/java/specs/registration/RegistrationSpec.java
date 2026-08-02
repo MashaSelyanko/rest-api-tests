@@ -35,4 +35,14 @@ public class RegistrationSpec {
                     "schemas/registration/invalid_registration_response_schema.json"))
             .expectBody("error", notNullValue())
             .build();
+
+    // спецификация для ответа теста: 401 статус-код (без авторизации)
+    public static ResponseSpecification unauthorizedRegistrationResponseSpec = new ResponseSpecBuilder()
+            .log(ALL)
+            .expectStatusCode(401)
+            .expectContentType(ContentType.JSON)
+            .expectBody(matchesJsonSchemaInClasspath(
+                    "schemas/registration/unauthorized_registration_response_schema.json"))
+            .expectBody("error", notNullValue())
+            .build();
 }

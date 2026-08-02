@@ -11,7 +11,7 @@ import static specs.registration.RegistrationSpec.*;
 
 public class RegisterPostApiClient extends TestBase {
 
-    @Step("Успешная регистрация пользователя")
+    @Step("Успешное создание пользователя")
     public SuccessfulRegistrationResponseRecordsModel mainRequest(RegistrationBodyModel body) {
         return given(userRequestSpec)
                 .config(timeoutConfig)
@@ -25,6 +25,7 @@ public class RegisterPostApiClient extends TestBase {
                 .as(SuccessfulRegistrationResponseRecordsModel.class);
     }
 
+    @Step("Создание пользователя при невалидном запросе")
     public InvalidRegistrationResponseRecordsModel invalidRequest(String invalidJson) {
     return given(userRequestSpec)
             .config(timeoutConfig)
@@ -34,6 +35,18 @@ public class RegisterPostApiClient extends TestBase {
             .post("/collections/users/records")
             .then()
             .spec(wrongRegistrationResponseSpec)
+            .extract()
+            .as(InvalidRegistrationResponseRecordsModel.class);
+
+} @Step("Создание пользователя без авторизации")
+    public InvalidRegistrationResponseRecordsModel unauthorizedRequest(RegistrationBodyModel body) {
+    return given(userRequestSpec)
+            .config(timeoutConfig)
+            .body(body)
+            .when()
+            .post("/collections/users/records")
+            .then()
+            .spec(unauthorizedRegistrationResponseSpec)
             .extract()
             .as(InvalidRegistrationResponseRecordsModel.class);
 

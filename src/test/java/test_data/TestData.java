@@ -36,6 +36,7 @@ public class TestData {
     }
 
     public static final String
-            EXPECTED_ERROR_INVALID_JSON = "invalid_request_body";
+    EXPECTED_ERROR_INVALID_JSON = "invalid_request_body",
+    AUTH_CREDENTIALS_NOT_PROVIDED_ERROR ="missing_api_key";
 }
 
