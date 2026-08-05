@@ -11,7 +11,8 @@ public class TestBase {
 
     protected static final ApiClient api = new ApiClient();
 
-    @BeforeAll
+
+@BeforeAll
     public static void setUp() {
         RestAssured.baseURI = "https://reqres.in";
     }
