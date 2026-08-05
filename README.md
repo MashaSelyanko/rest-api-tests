@@ -89,7 +89,7 @@ java "-DconfigFile=notifications/config.json" -jar ./notifications/allure-notifi
 <img title="Allure TestOps Dashboard" src="images/screen/TestOps1.png" width="850">  
 </p> 
 <p align="center">  
-<img title="Allure TestOps Dashboard" src="images/screen/TestOps_Dashboard.png" width="850">  
+<img title="Allure TestOps Dashboard" src="images/screen/Dashboards2.png" width="850">  
 </p> 
 
 
