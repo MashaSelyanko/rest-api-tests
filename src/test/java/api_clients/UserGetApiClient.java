@@ -7,7 +7,7 @@ import tests.TestBase;
 
 import static io.restassured.RestAssured.given;
 import static specs.registration.RegistrationSpec.userRequestSpec;
-import static specs.users.users_get.UsersSpecGet.successfulGetUsersListResponseSpec;
+import static specs.users.UsersSpecGet.successfulGetUsersListResponseSpec;
 
 public class UserGetApiClient extends TestBase {
 

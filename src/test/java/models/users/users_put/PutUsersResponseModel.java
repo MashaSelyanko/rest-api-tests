@@ -5,7 +5,5 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import models.users.users_get.UserRecord;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-
-
 public record PutUsersResponseModel(
         @JsonProperty("data")UserRecord data) {}

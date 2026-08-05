@@ -7,7 +7,7 @@ import test_data.TestData;
 import tests.TestBase;
 import static io.restassured.RestAssured.given;
 import static specs.registration.RegistrationSpec.userRequestSpec;
-import static specs.users.users_patch.UserSpecPatch.successfulPatchUsersResponseSpec;
+import static specs.users.UserSpecPatch.successfulPatchUsersResponseSpec;
 
 public class UserPatchApiClient extends TestBase {
 
