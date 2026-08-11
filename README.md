@@ -34,7 +34,7 @@
 - Позитивный тест - удаление пользователя
 
 
-## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/> Сборка в [Reqres]([https://reqres.in/]
+## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/> Сборка в [Jenkins](https://jenkins.qa.guru/job/41_MashaSelyanko_proect1/)
 
 <p align="center">  
 <img src="images/screen/proect2.png" alt="Jenkins" width="950"/>  
